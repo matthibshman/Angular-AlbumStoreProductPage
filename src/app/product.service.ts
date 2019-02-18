@@ -15,7 +15,7 @@ export class ProductService {
 
   getAlbum(id: number): Observable<Album> {
     const album = this._http.get(this._albumUrl)
-      .map((response) => response.json() as Album);
+      .map((response) => <Album>response.json());
     return album;
   }
 
